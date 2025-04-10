@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header
+        {
+          width: 100%;
+          height: 150px;
+          font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          font-style:italic;
+          background:linear-gradient(rgb(218, 23, 56),rgb(183, 104, 104));
+          text-align: center;
+          color: #f8efef;
+          border-radius: 25px;
+        }
+        .head h1{
+            animation-name: hd ;
+            animation-duration: 1s; 
+            animation-iteration-count: infinite;
+        }
+        @keyframes hd{
+         0%{transform: translateY(0);}
+         50%{transform: translateY(50px);}
+         75%{transform: translateY(30px);}
+         100%{transform: translateY(50px);}
+
+        }
+        .navbar{
+            position: relative;
+            top: 60px;
+        }
+        ul{
+    
+    list-style-type: none;
+    text-align: center;
+    
+align-items: center;
+
+}
+li a:hover{
+    background-color: gold;
+    border-radius: 5px;
+}
+a{
+text-decoration: none;
+color: #f8efef;
+
+}
+li{
+display: inline;
+padding: 3px;
+
+}
+.aboutus{
+    width: 1000px;
+    height: 100px;
+    color: rgb(191, 24, 24);
+    text-align: center;
+    background-color: beige;
+    font-weight: bold;
+    margin-left: 200px;
+    box-shadow: 5px 5px 5px 5px rgb(214, 151, 151);
+    border-radius: 25px;
+}
+.aboutus:hover{
+    transform: scale(1.01,1.01);
+}
+.hh{
+    color: black;
+}
+.gallery{
+    width: 1000px;
+    height: 300px;
+    color: rgb(191, 24, 24) ; 
+    font-weight: bold;
+    background-color: rgb(227, 214, 214);
+    text-align: center;
+   margin-left: 200px;
+   display: flex;
+   box-shadow: 5px 5px 5px 5px rgb(214, 151, 151);
+   border-radius: 25px;
+
+}
+.red{
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    margin-left: 50px;
+    
+    
+}
+ .gallery .red:hover{
+    transform: scale(1.5,1.5);
+}
+.blue{
+    width: 150px;
+    height: 150px;
+    background-color: rgb(111, 0, 255);
+    margin-left: 50px;
+    
+    
+    
+}
+.gallery .blue:hover{
+    transform: scale(1.5,1.5);
+}
+.green{
+    width: 150px;
+    height: 150px;
+    background-color:rgb(29, 250, 70);
+    margin-left: 80px;
+    
+    
+}
+.gallery .green:hover{
+    transform: scale(1.5,1.5);
+}
+.yellow{
+    width: 150px;
+    height: 150px;
+    background-color:rgb(233, 240, 107);
+    margin-left: 80px;
+    
+    
+}
+.gallery .yellow:hover{
+    transform: scale(1.5,1.5);
+}
+.pink{
+    width: 150px;
+    height: 150px;
+    background-color:rgb(214, 61, 191);
+    margin-left: 80px;
+    
+    
+}
+.gallery .pink:hover{
+    transform: scale(1.5,1.5);
+}
+.fun{
+    background-color: antiquewhite;
+    width: 1000px;
+    height: 400px;
+    box-shadow: 5px 5px 5px 5px rgb(214, 151, 151);
+    margin-left: 200px;
+    border-radius: 25px;
+ }
+ .funhead{
+    color: rgb(191, 24, 24) ; 
+    font-weight: bold;
+    text-align: center;
+
+ }
+ .art{
+    width: 80%;
+    height: 50px;
+    background-color: rgb(226, 226, 117);
+    text-align: left;
+    border:  antiquewhite 3px solid;
+    position: relative; left: 50px;
+    
+ }
+ .art:hover{
+    transform: translateX(5px);
+ }
+  
+ .music{
+    width: 80%;
+    height: 50px;
+    background-color: rgb(226, 226, 117);
+    text-align: left;
+    border:  antiquewhite 3px solid;
+    position: relative; left: 50px;
+ }
+ .music:hover{
+    transform: translateX(5px);
+ }
+ .jogging{
+    width: 80%;
+    height: 50px;
+    background-color: rgb(226, 226, 117);
+    text-align: left;
+    border:  antiquewhite 3px solid;
+    position: relative; left: 50px;
+ }
+ .jogging:hover{
+    transform: translateX(5px);
+ }
+ .thread{
+    width: 80%;
+    height: 50px;
+    background-color: rgb(226, 226, 117);
+    text-align: left;
+    border:  antiquewhite 3px solid;
+    position: relative; left: 50px;
+ }
+ .thread:hover{
+    transform: translateX(5px);
+ }
+ .contactus{
+    width: 1000px;
+    height: 400px;
+    background-color: antiquewhite;
+    
+    margin-left: 200px;
+    box-shadow: 5px 5px 5px 5px rgb(214, 151, 151);
+    border-radius: 25px;
+
+ }
+ .contacthd{
+    text-align: center;
+    color: rgb(191, 24, 24);
+
+ }
+ .btn1{
+    background-color: palevioletred;
+    width: 500px;
+    height: 50px;
+    border-radius: 5px;
+ }
+ .btn1:hover{
+    background-color: rgb(76, 195, 111);
+    transform: scale(1.01,1.01);
+ }
+ input{
+    width: 80%;
+    height: 30px;
+ }
+ textarea{
+    width: 80%;
+    height: 30px;
+
+ }
+ .frm{
+    text-align: center;
+    align-content: center;
+ }
+ .footer{
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 0, 128, 0.826);
+    color: white;
+    text-align: center;
+    align-content: center;
+    position: relative;
+    top:250px;
+
+ }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+    <div class="head"><h1>Welcome to Playful Wonderland!</h1></div>
+    <nav class="navbar">
+    <ul>
+        <li><a href="About">About</a></li>
+        <li><a href="Gallery">Gallery</a></li>
+        <li><a href="Activities">Activities</a></li>
+        <li><a href="Contact">Contact</a></li>
+    </ul></nav>
+</div>
+<br><br>
+    <div class="aboutus">About Us <br> 
+        <h4 class="hh">Discover the magic of creactivity and fun Join us for a wounderful journey fulled with color and laughter.</h4>
+    </div>
+    <br><br>
+    <div class="gallery"> Gallery  <br>
+        <div class="red">Image1</div>
+        <div class="blue">Image2</div>
+        <div class="green">Image3</div>
+        <div class="yellow">Image4</div>
+        <div class="pink">Image5</div>
+    </div>  <br>
+        <div class="fun"> 
+            <div class="funhead"><h2>Fun Activities</h2></div> 
+            <div class="art">Art Workshop</div>
+            <div class="music">Music jamming sections</div>
+            <div class="jogging">Jogging performences</div>
+            <div class="thread">Thread parties</div>
+        </div>
+        <br><br>
+        <div class="contactus">
+            <div class="contacthd"><h3>Contact Us</h3> </div>
+          <div class="frm"><form>
+            Name<br>
+            <input type="text" class="inpname"><br>
+            Email<br>
+            <input type="email" class="inpemail"><br>
+            Message<br>
+            <textarea name="" id="" rows="5" cols="50"></textarea><br><br>
+            <button class="btn1">Send message</button>
+           </form></div> <br>
+           
+        </div>  <br><br>
+        <footer>
+            <div class="footer">
+                <p>&copy; 2024 playful wonderland, All rights reserved</p>
+            </div>
+    </footer>
+</body>
+</html>
