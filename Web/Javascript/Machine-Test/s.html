@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Card List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+
+    .input-section, .stats, .search {
+      margin-bottom: 20px;
+    }
+
+    .input-section input {
+      margin-right: 10px;
+      padding: 8px;
+    }
+
+    #addStudentBtn {
+      padding: 8px 16px;
+    }
+
+    .card-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .card {
+      border: 1px solid #ccc;
+      padding: 15px;
+      width: 250px;
+      border-radius: 8px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .card.highlight {
+      background-color: lightyellow;
+    }
+
+    .card button {
+      margin-top: 10px;
+      margin-right: 10px;
+      padding: 5px 10px;
+    }
+
+    .stats, .search {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Card List</h2>
+
+  <div class="input-section">
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="course" placeholder="Course">
+    <input type="number" id="age" placeholder="Age">
+    <input type="number" id="marks" placeholder="Marks">
+    <button id="addStudentBtn">Add Student</button>
+  </div>
+
+  <div class="search">
+    Search: <input type="text" id="searchInput" placeholder="Search by name...">
+  </div>
+
+  <div class="stats" id="stats">
+    Total Students: 0 | Passed: 0
+  </div>
+
+  <div class="card-list" id="cardList"></div>
+
+  <script>
+    const addStudentBtn = document.getElementById('addStudentBtn');
+    const cardList = document.getElementById('cardList');
+    const stats = document.getElementById('stats');
+    const searchInput = document.getElementById('searchInput');
+
+    let totalStudents = 0;
+    let passedStudents = 0;
+
+    function updateStats() {
+      stats.textContent = `Total Students: ${totalStudents} | Passed: ${passedStudents}`;
+    }
+
+    function createCard(name, course, age, marks) {
+      const card = document.createElement('div');
+      card.className = 'card';
+      const result = marks >= 35 ? 'Pass' : 'Fail';
+
+      if (result === 'Pass') passedStudents++;
+      totalStudents++;
+      updateStats();
+
+      card.innerHTML = `
+        <strong>Name:</strong> ${name}<br>
+        <strong>Course:</strong> ${course}<br>
+        <strong>Age:</strong> ${age}<br>
+        <strong>Marks:</strong> ${marks}<br>
+        <strong>Result:</strong> ${result}<br>
+        <button class="deleteBtn">Delete</button>
+        <button class="highlightBtn">Highlight</button>
+      `;
+
+      // Delete Function
+      card.querySelector('.deleteBtn').addEventListener('click', () => {
+        if (result === 'Pass') passedStudents--;
+        totalStudents--;
+        card.remove();
+        updateStats();
+      });
+
+      // Highlight Function
+      card.querySelector('.highlightBtn').addEventListener('click', () => {
+        card.classList.toggle('highlight');
+      });
+
+      return card;
+    }
+
+    addStudentBtn.addEventListener('click', () => {
+      const name = document.getElementById('name').value.trim();
+      const course = document.getElementById('course').value.trim();
+      const age = parseInt(document.getElementById('age').value);
+      const marks = parseInt(document.getElementById('marks').value);
+
+      if (!name || !course || isNaN(age) || isNaN(marks)) {
+        alert('Please fill out all fields correctly!');
+        return;
+      }
+
+      const card = createCard(name, course, age, marks);
+      cardList.appendChild(card);
+
+      // Clear input fields
+      document.getElementById('name').value = '';
+      document.getElementById('course').value = '';
+      document.getElementById('age').value = '';
+      document.getElementById('marks').value = '';
+    });
+
+    // Search functionality
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      const cards = cardList.getElementsByClassName('card');
+      Array.from(cards).forEach(card => {
+        const nameText = card.innerText.toLowerCase();
+        card.style.display = nameText.includes(query) ? 'block' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
