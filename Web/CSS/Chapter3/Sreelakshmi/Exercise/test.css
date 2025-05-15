@@ -1,0 +1,54 @@
+.square{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(8, 227, 154);
+    animation: slidin 2s forwards;
+}
+@keyframes slidin {
+    from{
+        
+        transform: translateX(-20px);
+    }
+    to{
+        
+        transform: translateX(100px) scale(2);
+        
+    }
+   
+}
+.zoom{
+    font-weight: bold;
+    color: rgb(95, 115, 49);
+    margin-top: 50px;
+    margin-left: 20px;
+    animation: zoomin 2s linear infinite;
+    display: inline-block;
+
+}
+@keyframes zoomin {
+    0%{transform: scale(1); opacity: 0;}
+    50%{transform: scale(1.5);opacity: 1;}
+    100%{transform: scale(1);}
+}
+.rainbow{
+    font-family: arial black;
+    font-size: 70px;
+    background-image:linear-gradient(to right,red,orange,yellow,green,blue,indigo,red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 35s linear infinite;
+}
+@keyframes rainbow{
+    to{
+        background-position: 4500vh;
+    }
+}
+.shadow{
+    width: 500px;
+    height: 100px;
+    border: chocolate 2px solid;
+    
+}
+.shadow:hover{
+    box-shadow: 10px 5px red;
+}
