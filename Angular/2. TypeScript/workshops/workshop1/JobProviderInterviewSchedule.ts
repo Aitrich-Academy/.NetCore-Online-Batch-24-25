@@ -47,9 +47,7 @@ class JobProvider {
             case '2':
                 this.scheduleInterview();
                 break;
-                case '3':
-                   ScheduledInterviewList();
-                    break;
+                
             case '0':
                 exitProgram = true;
                 break;
@@ -159,16 +157,7 @@ class JobProvider {
 
 
 }
-function ScheduledInterviewList(){
-    interviewList.forEach((job) => {
-    
-    console.log(`Job Title: ${job.jobTitle}`);
-    console.log(`dateOfInterview: ${job.dateOfInterview}`);
-    console.log(`time: ${job.time}`);
-    console.log(` modeOfInterview: ${job. modeOfInterview}`);
-   
-  });
-}
+
 
 var jobProviderRef = new JobProvider();
 jobProviderRef.showMenu();
