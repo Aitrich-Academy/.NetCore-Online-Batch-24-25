@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .maincontainer{
+            width: 100%;
+            height: max-content;
+          
+            position: relative;
+            
+        }
+        .leftcontainer{
+            width: 20%;
+            height: 700px;
+            border: 1px solid green;
+            text-align: center;
+            background-color: rgb(0, 122, 204);
+            color: white;
+            
+
+        }
+        .hirehead{
+            margin-top: 40px;
+            font-size: xx-large;
+            font-weight: bold;
+        }
+        ul{
+            list-style: none;
+            margin-top: 50px;
+        }
+        .menuitem{
+            display: flex;
+            align-items: center;
+            gap: 30px; 
+            margin-bottom: 15px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
+        .rightcontainer{
+            
+            width: 80%;
+            height: 700px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        table{
+           
+            position: absolute;
+            top: 200px;
+            left: 70px;
+            border-spacing: 20px;
+            border: 3px solid red;
+            
+        }
+        td{
+            font-size: smaller;
+        }
+    </style>
+</head>
+<body>
+    <div class="maincontainer">
+        <div class="leftcontainer"> 
+            <div class="hirehead">Hire Me Now!</div>
+            <ul>
+                <li class="menuitem">
+                    <img src="/images/dashboard 1.png" alt="">
+                    <a href="#">Dashboard</a>
+                </li>
+                <li class="menuitem"> 
+                    <img src="/images/suitcase 2.png" alt="">
+                    <a href="#">Jobs</a>
+                </li>
+                <li class="menuitem">
+                    <img src="/images/application (1) 1.png" alt="">
+                    <a href="#">Applications</a>
+                </li>
+                <li class="menuitem">
+                    <img src="/images/question (1) 1.png" alt="">
+                    <a href="#">Interviews</a>
+                </li>
+                <li class="menuitem">
+                    <img src="/images/message 1.png" alt="">
+                    <a href="#">Messages</a>
+                </li>
+                <li class="menuitem">
+                    <img src="/images/settings 1.png" alt="">
+                    <a href="#">Settings</a>
+                </li>
+                
+            </ul>
+            <div class="addnew">
+                <img src="/images/add-group (1) 1.png" alt=""><br>
+                <a href="">AddNew</a>
+            </div>
+
+        </div>
+       <div class="rightcontainer">
+         <table id="candidatetable">
+            
+
+            <tbody id="tablebody">
+              
+            </tbody>
+
+         </table>
+       </div>
+    </div>
+    <script>
+        function showcandidates(){
+
+            let CandidateTable=document.getElementById('candidatetable');
+            let TableBody=document.getElementById('tablebody');
+
+            let arraylist=[
+                {name:"Alen",qualification:"MCA",experience:"3 year",location:"Banglore",image:"/images/img1.png"},
+                {name:"Sarah",qualification:"MSC",experience:"5 year",location:"Chennai",image:"/images/img3.png"},
+                {name:"Vivek",qualification:"Btech",experience:"5 year",location:"Thiruvanathapuram",image:"/images/img2.png"},
+                {name:"Hanna",qualification:"Btech",experience:"2 year",location:"Calicut",image:"images/girl.png"}
+            ]
+
+            for (let i = 0; i < arraylist.length; i += 2){
+                const row=document.createElement('tr');
+
+                const td1=document.createElement("td");
+                td1.innerHTML=`
+                <img src="${arraylist[i].image}" alt="${arraylist[i].name}" width="50"><br>
+                <strong>${arraylist[i].name}</strong><br>
+                Qualification:${arraylist[i].qualification}<br>
+                Experience:${arraylist[i].experience}<br>
+                Location:${arraylist[i].location}
+
+                `;
+                row.appendChild(td1);
+
+
+               
+                const td2=document.createElement("td");
+                if(i + 1 <arraylist.length){
+                td2.innerHTML=`
+                <img src="${arraylist[i + 1].image}" alt="${arraylist[i + 1].name}" width="50"><br>
+                <strong>${arraylist[i + 1].name}</strong><br>
+                Qualification:${arraylist[i + 1].qualification}<br>
+                Experience:${arraylist[i + 1].experience}<br>
+                Location:${arraylist[i + 1].location}
+                `;
+                }
+                else{
+                    td2.innerHTML="";
+                }
+                row.appendChild(td2);
+                TableBody.appendChild(row);
+                
+
+            }
+          
+           
+            
+        }
+        showcandidates();
+    </script>
+</body>
+</html>
