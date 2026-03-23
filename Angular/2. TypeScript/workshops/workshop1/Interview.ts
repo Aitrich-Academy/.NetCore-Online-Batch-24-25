@@ -1,6 +1,6 @@
 export class Interview {
-    jobTitle: string;
-    dateOfInterview: Date;
-    time: string;
-    modeOfInterview: string;
+    jobTitle!: string;
+    dateOfInterview!: Date;
+    time!: string;
+    modeOfInterview!: string;
 }
