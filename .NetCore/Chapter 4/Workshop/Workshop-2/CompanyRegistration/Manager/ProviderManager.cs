@@ -72,7 +72,7 @@ namespace CompanyMember.Repository
 					Console.WriteLine("Login successful!");
 					_isLogged = true;
 					Console.WriteLine("Welcome " + LoggedUser.FirstName);
-					if (LoggedUser.Role == Roles.JobProvider)
+					if (LoggedUser.Role == UserType.JobProvider)
 					{
 						menu = new JobManager(LoggedUser);
 					}

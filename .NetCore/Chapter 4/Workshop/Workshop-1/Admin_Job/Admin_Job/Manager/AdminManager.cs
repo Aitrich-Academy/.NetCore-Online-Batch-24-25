@@ -1,6 +1,6 @@
 ﻿using Admin_Job.Interface;
 
-using Admin_Job.Interface;
+using Admin_Job.Interfaces;
 
 using Admin_Job.Models;
 using Admin_Job.Repository;
