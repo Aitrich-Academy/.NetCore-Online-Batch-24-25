@@ -13,19 +13,19 @@ namespace CompanyMember.Repository
 	{
 		private List<User> users = new List<User>()
 		{
-			 new User(2, "Lal", "Krishna", "lalkrishna@gmail.com", 123, "123", Roles.JobProvider), new User(2, "Raj", "Ram", "jobProvider@gmail.com", 123, "123", Roles.JobProvider) 
+			 new User(2, "Lal", "Krishna", "lalkrishna@gmail.com", 123, "123", UserType.JobProvider), new User(2, "Raj", "Ram", "jobProvider@gmail.com", 123, "123", UserType.JobProvider) 
 		};
 		private int nextId = 3;
 	
 
 		public List<User> getAll()
 		{
-			return users.Where(e => e.Role == Roles.JobSeeker).ToList();
+			return users.Where(e => e.Role == UserType.JobSeeker).ToList();
 		}
 		public bool register(User user)
 		{
 			user.Id = nextId;
-			user.Role = Roles.JobProvider;
+			user.Role = UserType.JobProvider;
 			nextId++;
 			if (users.Find(e => e.Email == user.Email) == null)
 			{
