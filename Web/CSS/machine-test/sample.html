@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <p id="msg">click this </p>
+    <button type="button" onclick='document.getElementById("msg").innerHTML= "saved successfully"'>save</button>
+    <!-- <script src="sample.js"></script> -->
+     <button type="button" onclick="document.getElementById('img').src='/image/shophy.png'">view image</button>
+
+    <img src="/image/google.png" alt="" id="img">
+
+
+    
+    <p id="font">make me big</p>
+    <button type="button" onclick="document.getElementById('font').style.fontSize='25px'">click me</button>
+
+    <p id="color">make me big</p>
+    <button type="button" onclick="document.getElementById('color').style.color='red'">click me</button>
+
+    <p id="background">background</p>
+    <button type="button" onclick="document.getElementById('background').style.backgroundColor='blue'">click me</button>
+
+    <p id="hide">Hide Me</p>
+    <button type="button" onclick="document.getElementById('hide').style.display='none'">Hide</button>
+
+    <p id="show" style="display: none;">David George Jeril</p>
+    <button type="button" onclick="document.getElementById('show').style.display='block'">show me</button>
+
+<h2>show date and time</h2>
+<p id="date"></p>
+<button type="button" onclick="document.getElementById('date').innerHTML=Date()">click me show your date and time</button>
+    
+</body>
+</html>
