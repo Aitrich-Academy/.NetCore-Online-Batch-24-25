@@ -1,0 +1,108 @@
+<button (click)="toggleLogin()">Login / Logout</button>
+
+<p *ngIf="isLoggedIn">Welcome, {{ username }}</p>
+
+<p *ngIf="!isLoggedIn">Please Login</p>
+
+
+<hr>
+
+<!-- PRODUCT AVAILABILITY -->
+<h3>Product Status</h3>
+
+<p [ngClass]="inStock ? 'green' : 'red'">
+  {{ inStock ? 'In Stock' : 'Out of Stock' }}
+</p>
+
+<button (click)="inStock = !inStock">Change Stock</button>
+
+<hr>
+
+<h3>Shopping Cart</h3>
+
+<ul>
+  <li *ngFor="let item of cart; let i = index">
+    
+    {{ item.name }} - ₹{{ item.price }}
+
+    <button (click)="removeItem(i)">Remove</button>
+
+  </li>
+</ul>
+
+<!-- 4️SEARCH FILTER -->
+<h3>Search Filter</h3>
+<input [(ngModel)]="searchText" placeholder="Search item">
+<ul>
+  <li *ngFor="let item of items">
+    <span *ngIf="item.toLowerCase().includes(searchText.toLowerCase())">
+      {{ item }}
+    </span>
+  </li>
+</ul>
+
+<hr>
+
+<!-- 5️ USER REGISTRATION PREVIEW -->
+<h3>User Registration</h3>
+<input [(ngModel)]="name" placeholder="Enter Name">
+<input [(ngModel)]="email" placeholder="Enter Email">
+
+<p>Name: {{ name }}</p>
+<p>Email: {{ email }}</p>
+
+<hr>
+
+<!-- 6️ DARK MODE -->
+<h3>Dark Mode</h3>
+<button (click)="isDark = !isDark">Toggle Mode</button>
+
+<div [ngClass]="isDark ? 'dark' : 'light'">
+  This is theme content
+</div>
+
+<hr>
+
+<!-- 7️ NOTIFICATION BADGE -->
+<h3>Notifications</h3>
+<p *ngIf="notificationCount > 0">
+  🔔 You have {{ notificationCount }} notifications
+</p>
+
+<hr>
+
+<!-- 8️ DYNAMIC BUTTON DISABLE -->
+<h3>Form</h3>
+<input [(ngModel)]="inputName" placeholder="Name">
+<input [(ngModel)]="inputEmail" placeholder="Email">
+
+<button [disabled]="!inputName || !inputEmail">
+  Submit
+</button>
+
+<hr>
+
+<!-- 9️ TASK MANAGER -->
+<h3>Todo List</h3>
+
+<input [(ngModel)]="newTask" placeholder="Add task">
+<button (click)="addTask()">Add</button>
+
+<ul>
+  <li *ngFor="let task of tasks"
+      [ngClass]="task.done ? 'done' : ''"
+      (click)="toggleTask(task)">
+    {{ task.name }}
+  </li>
+</ul>
+
+<hr>
+
+<!-- 10 PROFILE CARD -->
+<h3>Users</h3>
+
+<div *ngFor="let user of users"
+     (click)="selectUser(user)"
+     [ngClass]="user === selectedUser ? 'selected' : ''">
+  {{ user }}
+</div>
