@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skewed button
+    </title>
+    <style>
+         .Skewed{
+      padding: 12px 24px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      transform: skewX(20deg) skewY(10deg);
+      transition: transform 0.3s ease;
+      transform: translate(30px,40px);
+    }
+    .card
+    {
+        width: 50px;
+        height: 50px;
+        background-color: rgb(94, 31, 133);
+        
+        position: relative;
+        margin: 50px;
+        transform-style: preserve-3d;
+        transition: transform 0.6s ease;
+    }
+     .card:hover{transform:rotateY(180deg);
+
+     }
+    .rotated-box {
+  width: 100px;
+  height: 100px;
+  background-color: #ff6f61;
+  transform: rotate(45deg);
+  margin: 50px ;
+}
+.imagess{
+    width: 100%;
+    height: 100%;
+    
+    margin: 50px;
+    overflow: hidden;
+}
+.imagess img{
+    transform: 0.3s ease;
+}
+.imagess img:hover
+{
+    transform: scale(1.1);
+}
+
+    </style>
+</head>
+<body>
+    <button class="Skewed">Click here</button>
+    <div class="card">Hello...</div>
+    <div class="rotated-box"></div>
+    <div class="imagess">
+        <img src="image/Screenshot 2025-03-18 112646.png" alt="imagessssss">
+    </div>
+</body>
+</html>

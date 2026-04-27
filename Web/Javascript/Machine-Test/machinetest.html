@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            
+            width: 100%;
+            height: 700px;
+           
+        
+            
+        }
+        .head{
+            width: 100%;
+            height: 300px;
+            background-image:url(/images/download.jpeg) ;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            color: rgb(230, 15, 15);
+            font-family: cursive;
+            font-size:xx-large;
+            font-weight: 900;
+            
+        }
+        #container{
+            position: absolute;
+            top: 350px;
+            left: 550px;
+            display: flex;
+            gap: 30px;
+
+
+        }
+        input{
+            width: 200px;
+            height: 30px;
+            border: 1px solid rgb(193, 147, 147);
+            box-shadow: 5px 5px 5px 5px rgb(216, 105, 105) ;
+            font-family: cursive;
+        }
+        button{
+            font-family: cursive;
+        }
+        ul{
+            list-style: none;
+            position: absolute;
+            top: 50px;
+            left: -38px;
+            
+
+        }
+        ul li{
+            background-color: rgb(189, 139, 65);
+             box-shadow: 5px 5px 5px 5px rgb(203, 216, 105) ;
+            width: 200px;
+            height: 40px;
+            font-family: cursive;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .deletebutton{
+           
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="head">You can Add your Product to cart Here</div>
+    <div id="container">
+        <input type="text" placeholder="enter the product name" id="text">
+        <button id="addbutton" onclick="productcart()">Add to cart</button>
+
+        <ul id="productlist"></ul>
+
+    </div>
+    <script>
+        function productcart(){
+            let Text=document.getElementById('text');
+            let producttext=Text.value;
+
+
+            let ProductList=document.getElementById('productlist');
+            let list=document.createElement('li');
+            list.innerText=producttext;
+
+            ProductList.appendChild(list);
+
+            const delbutton=document.createElement('button')
+            delbutton.className="deletebutton";
+
+            delbutton.innerText="Delete";
+
+            delbutton.addEventListener("click",function(){
+                ProductList.removeChild(list);
+            })
+            list.appendChild(delbutton);
+
+            Text.value="";
+            Text.focus();
+        }
+
+    </script>
+</body>
+</html>

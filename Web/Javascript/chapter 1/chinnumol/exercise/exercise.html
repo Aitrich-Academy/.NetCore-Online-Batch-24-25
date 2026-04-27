@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 100%;
+            height: 700px;
+            
+           
+        }
+        .left-container{
+            width: 20%;
+            height: 700px;
+            background-color: #4B0082;
+            position: relative;
+        }
+        .right-container{
+            width: 80%;
+            height: 700px;
+            background-color: #F5F5F5;
+           
+            position: absolute;
+            top: 8px;
+            left: 260px;
+           border-radius: 50px 0 0 50px;
+        }
+        .logo{
+            position: absolute;
+            top: 50px;
+            left: 30px;
+        }
+        .logo-name{
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            font-style: italic;
+            color: white;
+            font-size: xx-large;
+            position: absolute;
+            top: 70px;
+            left: 110px;
+        }
+      a{
+        color: white;
+        
+        text-decoration: none;
+      }
+     .dashboard{
+        position: absolute;
+            top: 130px;
+            left: 30px;
+            
+     }
+     ul li{
+        list-style-type: none;
+     }
+     .myprofileimg{
+       
+        width: 250px;
+        height: 50px;
+        position: absolute;
+        top: 20px;
+        left: 50px;
+     }
+     .myprofile{
+        position: absolute;
+        top: -20px;
+        left: 50px;
+
+     }
+     .searchbar{
+        background-color: #F2F2F2; 
+        border: 1px solid #D9D9D9;
+        border-radius: 10px;
+        padding: 5px;
+        width: 250px;
+        position: absolute;
+        left: 400px;
+        top: 18px;
+        
+     }
+     .notification{
+        width: 200px;
+        height: 20px;
+        position: absolute;
+        right: -30px;
+        top: 18px;
+     }
+     .account-section {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    font-size: 16px;
+    color: #6D28D9; /* Purple color */
+    font-weight: bold;
+    position: absolute;
+    top: 150px;
+    left: 150px;
+}
+
+.icon {
+    font-size: 20px; /* Adjust icon size */
+}
+
+.line .divider {
+    border: none;
+    height: 1px;
+    background-color: #D9D9D9; /* Light gray */
+    margin-top: 5px;
+    width: 100px;
+    position: absolute;
+    top: 180px;
+    left: 150px;
+}
+.form{
+    width: 450px;
+    height: 450px;
+    background-color: white;
+    position: absolute;
+    top: 200px;
+    left: 150px;
+}
+.formimage{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+td{
+    font-size: medium;
+}
+label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    margin-top: 15px;
+    background: #4B0082;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+   
+   
+}
+#messagebox{
+    text-align: center;
+    display: none;
+    width: 400px;
+    height: 200px;
+    border: 1px solid gray;
+    box-shadow: 2px 2px 2px 2px gray;
+    border-radius: 10px;
+    position: fixed;  /* Make it float above the page */
+    top: 200px;        /* Adjust as needed */
+    left: 50%;
+    z-index: 1000;   
+    transform: translateX(-50%);
+    background-color: white; 
+}
+#overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4); /* Dimmed background */
+      display: none;
+      z-index: 999;
+    }
+    </style>
+</head>
+<body id="body">
+    <div class="container">
+        <div class="left-container">
+            <div class="logo"><img src="/images/Group 8.png" alt=""></div>
+            <div class="logo-name">Jobie</div>
+            <div class="dashboard">
+                <ul>
+                    <li><img src="/images/Vector.png" alt=""><a href="">dashboard</a></li><br>
+                    <li><img src="/images/image 10.png" alt=""><a href="">Job Providers</a></li><br>
+                    <li><img src="/images/image 6.png" alt=""><a href="">New Registrations</a></li><br>
+                    <li><img src="/images/image 9.png" alt=""><a href="">Job seekers</a></li><br>
+                    <li><img src="/images/ic_search.png" alt=""><a href="">Jobs</a></li><br>
+                    <li><img src="/images/frame.png" alt=""><a href="">My profile</a></li><br>
+                    <li><img src="/images/card.png" alt=""><a href="">Messages</a></li><br>
+                    <li><img src="/images/image 7.png" alt=""><a href="">settings</a></li><br>
+                    <li><img src="/images/image 8.png" alt=""><a href="">Logout</a></li><br>
+
+
+                </ul>
+            </div>
+
+        </div>
+        <div class="right-container">
+            <div class="myprofileimg">
+                <img src="/images/ic_menu.png" alt=""> 
+                <div class="myprofile" >
+                    <h3>My Profile</h3>
+                </div>
+                
+            </div>
+            <div class="search">
+                <input type="text"  placeholder="search something here" class="searchbar">
+
+            </div>
+            <div class="notification">
+             <img src="/images/notification.png" alt="" width="30px" height="30px">&nbsp; &nbsp;<img src="/images/notification (1).png" alt="" width="30px" height="30px">&nbsp; &nbsp;<img src="/images/profilePicture.png" alt="" width="30px" height="30px">
+            </div>
+            <div class="account-section">
+                <span class="icon">👤</span>
+                <span class="title">Account</span>
+               
+            </div>
+            <div class="line">
+                <hr class="divider">
+            </div>
+            <div class="form">
+                 <div class="formimage">
+                    <img src="/images/profilePicture.png" width="35px" height="40px" alt=""><br>
+                    <section><br>
+                    <form onsubmit="showdetails(event)">
+                        <label>Full Name</label><br>
+                        <input type="text" placeholder="Please enter your full name" id="userfullname"><br><br>
+                        
+                        <label>Username</label><br>
+                        <input type="text" placeholder="Please enter your username" id="useruname"><br><br>
+                        
+                        <label>Email</label><br>
+                        <input type="email" placeholder="Please enter your email" id="useremail"><br><br>
+                        
+                        <label>Phone No</label><br>
+                        <input type="text" placeholder="Please enter your phone number" id="userphonenumber"><br><br>
+                        
+                        <button type="submit">Update Details</button>
+                    </form>
+                </section>
+                 </div>
+ 
+            </div>
+            
+        </div>
+        <section class="profile-card">
+            <div class="profile-pic">
+                <img src="avatar.png" alt="Profile Avatar">
+            </div>
+
+
+            <div id="overlay"></div>
+            
+            <div id="messagebox">
+                <h3>Entered details are:</h3>
+                <h6 id="fullname"></h6>
+                <p id="uname"></p>
+                <p id="mail"></p>
+                <p id="number"></p>
+                <button id="close" value="close" onclick="buttonclose()">close</button>
+
+            </div>
+
+    </div>
+    
+
+
+
+    <script>
+        function showdetails(event){
+            event.preventDefault();
+            document.getElementById('fullname').innerText=document.getElementById('userfullname').value;
+            document.getElementById('uname').innerText=document.getElementById('useruname').value;
+            document.getElementById('mail').innerText=document.getElementById('useremail').value;
+            document.getElementById('number').innerText=document.getElementById('userphonenumber').value;
+
+           
+           document.getElementById('overlay').style.display = 'block';                               
+            document.getElementById('messagebox').style.display="block";
+        }
+
+        function buttonclose(){
+            document.getElementById('messagebox').style.display="none";
+            
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
